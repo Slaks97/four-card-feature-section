@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff: 'Poppins', sans-serif;
+    --fs: 15px;
+    --fw-l: 200;
+    --fw-m: 400;
+    --fw-b: 600;
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    border: 2px solid gray;
+    background-color: var(--very-light-gray);
+    font-family: var(--ff);
+    color: var(--grayish-blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    margin: 70px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.title {
+    color: var(--very-dark-blue);
+    font-weight: var(--fw-l);
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-size: .92rem;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+img {
+    margin-left: auto;
+    padding: 30px 0 10px;
+}
+
+.sections {
+    display: grid;
+    row-gap: 35px;
+    grid-template-columns: 80vw;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+        'tools-sup'
+        'tools-team'
+        'tools-karma'
+        'tools-calc'
+        ;
+}
+
+.tools {
+    box-shadow: 0 5px 10px 5px #dfe8f5;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px 32px;
+    display: grid;
+}
+
+.tools-sup {
+    border-top: 4px solid var(--cyan);
+    grid-area: tools-sup;
+}
+
+.tools-team {
+    border-top: 4px solid var(--red);
+        grid-area: tools-team;
+}
+
+.tools-karma {
+    border-top: 4px solid var(--orange);
+        grid-area: tools-karma;
+}
+
+.tools-calc {
+    border-top: 4px solid var(--blue);
+        grid-area: tools-calc;
+}
+
+.tools-description {
+    font-size: .75rem;
+    line-height: 1.8;
+}
+
+.title-accent, h2 {
+    color: var(--very-dark-blue);
+    font-weight: var(--fw-b);
+}
+
+.attribution {
+    margin-bottom: 40px;
+    font-size: .6rem;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        width: 45%;
+        margin: 45px auto 65px auto;
+    }
+    .title {
+        font-size: 2.3rem;
+    }
+    .subtitle {
+        font-size: .97rem;
+    }
+    .sections {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 35px;
+        grid-template-areas: 
+            'tools-sup tools-team tools-calc'
+            'tools-sup tools-karma tools-calc'
+            ;
+    }
+    .tools {
+        min-height: 250px;
+    }
+    .tools-sup {
+        align-self: center;
+    }
+    .tools-calc {
+        align-self: center;
+    }
+    .tools-description {
+        font-size: .85rem;
+        padding: 7px 9px 0 0;
+    }
+    .attribution {
+        font-size: 1rem;
+    }
+}

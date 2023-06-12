@@ -25,7 +25,6 @@ img {
 }
 
 body {
-    border: 2px solid gray;
     background-color: var(--very-light-gray);
     font-family: var(--ff);
     color: var(--grayish-blue);
